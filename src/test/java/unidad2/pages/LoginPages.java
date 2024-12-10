@@ -94,19 +94,20 @@ public class LoginPages extends ClaseBase {
 
     public void RegAlianza(String mail, String nom, String apell, int doc, String nDoc, String cell, String comuna, String calle, String numCall, String depCas, String pass, String repPass, int rdAl, String rutEmp, String nomEmp, String mailEmp, String conv, int vit, boolean chkTerm, boolean chk) {
 
-        esperarXSegundos(1000);
+        esperarXSegundos(1500);
 
+
+        esperarXSegundos(1500);
+        agregarTexto(esperaExplicita(byTxtMail), mail);
         if (estaDesplegado(byPUpCookie)) {
             click(esperaExplicita(byPUpCookie));
         }
-        esperarXSegundos(1000);
-        agregarTexto(esperaExplicita(byTxtMail), mail);
-        click(esperaExplicita(byPUpCookie));
         click(esperaExplicita(byBtnContinuar));
         agregarTexto(esperaExplicita(byTxtNomb), nom);
         agregarTexto(esperaExplicita(byTxtApell), apell);
         List<WebElement> tipDoc = buscarElementosWeb(byRdDoc);
         click(tipDoc.get(doc));
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtDoc), nDoc);
         agregarTexto(esperaExplicita(byTxtCell), cell);
         agregarTexto(esperaExplicita(byTxtComuna), comuna);
@@ -114,22 +115,27 @@ public class LoginPages extends ClaseBase {
         agregarTexto(esperaExplicita(byTxtNumCall), numCall);
         agregarTexto(esperaExplicita(byTxtDptoCasa), depCas);
         click(esperaExplicita(byBtnContinuar2));
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtPass), pass);
         agregarTexto(esperaExplicita(byRepTxtPass), repPass);
         click(esperaExplicita(byBtnRegPass));
         if (estaDesplegado(byBtnEntendido)) {
             click(esperaExplicita(byBtnEntendido));
         }
+        esperarXSegundos(1000);
         List<WebElement> rdAliado = buscarElementosWeb(byRdAliado);
         click(rdAliado.get(rdAl));
         click(esperaExplicita(byBtnContAliad));
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byRutEmp), rutEmp);
         if (estaDesplegado(byEntendido2)) {
             click(esperaExplicita(byEntendido2));
         }
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtNomEmp), nomEmp);
         click(esperaExplicita(bySelRubr));
         click(byRubSel);
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtMailEmp), mailEmp);
         click(esperaExplicita(byBtnAliadEmp));
 
@@ -363,6 +369,7 @@ public class LoginPages extends ClaseBase {
         if (estaDesplegado(byPUpCookie)) {
             click(esperaExplicita(byPUpCookie));
         }
+
         esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtMail), mail);
         //click(esperaExplicita(byPUpCookie));
@@ -371,6 +378,7 @@ public class LoginPages extends ClaseBase {
         agregarTexto(esperaExplicita(byTxtApell), apell);
         List<WebElement> tipDoc = buscarElementosWeb(byRdDoc);
         click(tipDoc.get(doc));
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtDoc), nDoc);
         agregarTexto(esperaExplicita(byTxtCell), cell);
         agregarTexto(esperaExplicita(byTxtComuna), comuna);
@@ -378,9 +386,11 @@ public class LoginPages extends ClaseBase {
         agregarTexto(esperaExplicita(byTxtNumCall), numCall);
         agregarTexto(esperaExplicita(byTxtDptoCasa), depCas);
         click(esperaExplicita(byBtnContinuar2));
+        esperarXSegundos(1000);
         agregarTexto(esperaExplicita(byTxtPass), pass);
         agregarTexto(esperaExplicita(byRepTxtPass), repPass);
         click(esperaExplicita(byBtnRegPass));
+        esperarXSegundos(1000);
         if (estaDesplegado(byBtnEntendido)) {
             click(esperaExplicita(byBtnEntendido));
         }
@@ -388,6 +398,7 @@ public class LoginPages extends ClaseBase {
         if (rdAl == 0) {
             click(rdAliado.get(rdAl));
             click(esperaExplicita(byBtnContAliad));
+            esperarXSegundos(1000);
             agregarTexto(esperaExplicita(byRutEmp), rutEmp);
             if (estaDesplegado(byEntendido2)) {
                 click(esperaExplicita(byEntendido2));
@@ -395,6 +406,7 @@ public class LoginPages extends ClaseBase {
             agregarTexto(esperaExplicita(byTxtNomEmp), nomEmp);
             click(esperaExplicita(bySelRubr));
             click(byRubSel);
+            esperarXSegundos(1000);
             agregarTexto(esperaExplicita(byTxtMailEmp), mailEmp);
             click(esperaExplicita(byBtnAliadEmp));
             //6ta pag
@@ -404,11 +416,13 @@ public class LoginPages extends ClaseBase {
 
             click(esperaExplicita(bySlcConv));
             click(esperaExplicita(byConvSlc1));
+            esperarXSegundos(1000);
             List<WebElement> vitEmp = buscarElementosWeb(byRdVEmp);
             click(vitEmp.get(vit));
             if (estaDesplegado(byBtnModalEnt)) {
                 click(esperaExplicita(byBtnModalEnt));
             }
+            esperarXSegundos(1000);
             List<WebElement> checks = buscarElementosWeb(byChkTermEmp);
             if (chkTerm) {
                 click(checks.get(0));
@@ -422,6 +436,7 @@ public class LoginPages extends ClaseBase {
 
         } else if (rdAl == 1) {
             click(rdAliado.get(rdAl));
+            esperarXSegundos(1000);
             List<WebElement> checks = buscarElementosWeb(byChkAcpTerm);
             if (chkTerm) {
                 click(checks.get(0));

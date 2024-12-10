@@ -20,6 +20,8 @@ public class CotPages extends ClaseBase {
 
 
     //para assertion
+    By byResEsp1 = By.xpath("//strong[contains(text(),\"Sin cobertura de env\"");
+
     By byResEsp = By.xpath("//h5[contains(text(),\"Resumen de tu\")]");
 
 
@@ -29,19 +31,24 @@ public class CotPages extends ClaseBase {
     }
 
     public void LLenFor(int tipEnv, String desde, String dest, String peso){
+        esperarXSegundos(1500);
         List<WebElement> tipEnvio = buscarElementosWeb(byRdDoc);
         click(tipEnvio.get(tipEnv));
-
+        //scrollToElement(txtdesde);*/
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 250);");
+        esperarXSegundos(500);
+        agregarTexto(esperaExplicita(byTxtDesde),desde);
+        agregarTexto(esperaExplicita(byTxtDest),dest);
+        esperarXSegundos(500);
+        agregarTexto(esperaExplicita(byTxtPeso),peso);
         esperarXSegundos(1000);
         if (estaDesplegado(byCerrPUp)){
             click(esperaExplicita(byCerrPUp));
         }
-
-        //scrollToElement(txtdesde);*/
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 250);");
-        agregarTexto(esperaExplicita(byTxtDesde),desde);
-        agregarTexto(esperaExplicita(byTxtDest),dest);
-        agregarTexto(esperaExplicita(byTxtPeso),peso);
         click(esperaExplicita(byBtnEnvFor));
+    }
+
+    public String obtResp() {
+        return obtenerTexto(esperaExplicita(byResEsp));
     }
 }
